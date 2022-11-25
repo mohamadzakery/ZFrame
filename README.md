@@ -1,6 +1,6 @@
 # ZFrame
 fast and flixable Framing library for TCP and other network protocols.
-This library support all network protoclos for solving  dynamic data framing of network stream. 
+This library support all network protoclos for solving  dynamic data framing of any network stream. 
 
 
 # Examples

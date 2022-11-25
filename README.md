@@ -45,9 +45,12 @@ This library support all network protoclos for solving  dynamic data framing of 
 
 ```c#
 
-    public void SendAsyncFrame(string message)
+    //send method
+    public void Send(string message)
     {
-        SendAsync(frame.ToFrame(message));
+        //convert any type to Zframe byte[]
+        byte[] ZframePacket=frame.ToFrame(message);
+        SendAsync(ZframePacket);
     }
 
 

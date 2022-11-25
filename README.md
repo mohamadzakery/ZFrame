@@ -9,22 +9,24 @@ This library support all network protoclos for solving  dynamic data framing of 
 
 
 ```c#
-ZFrame frame = null;
-
+    
+    ZFrame frame = null;
+    
+    //can init in any method but i init in constructor of class
     public Constructor() 
     {
         frame = new ZFrame(65536);
         frame.OnPacketRecived += PacketRecived;
     }
     
-    
-     void PacketRecived(byte[] data)
+    //Zframe event
+    void PacketRecived(byte[] data)
     {
         var message = Encoding.UTF8.GetString(data);
         Debug.Log("Raw:" + message);
     }
     
-    
+    //OnRecive of  C# Socket
     protected override void OnReceived(byte[] buffer, long offset, long size)
     {
         byte[] bytes = new byte[size];
